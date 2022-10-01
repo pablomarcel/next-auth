@@ -10,8 +10,8 @@ export default function Navbar() {
   return (
     <div className="container">
       <nav>
-        <Image src="/rupee.png" width={50} height={48} />
-        <h1>Gaming Vibes</h1>
+        <Image src="/goldcoin.png" width={50} height={48} />
+        <h1>Corporate Lingo</h1>
         {authReady && (
           <ul>
             <li><Link href="/"><a>Home</a></Link></li>
