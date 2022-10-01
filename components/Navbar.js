@@ -15,7 +15,6 @@ export default function Navbar() {
         {authReady && (
           <ul>
             <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/guides"><a>Guides</a></Link></li>
             <li><Link href="/phrases"><a>Phrases</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
             {user && <li>{user.email}</li>}
