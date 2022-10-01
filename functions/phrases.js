@@ -22,6 +22,8 @@ const connectToDatabase = async (uri) => {
 const queryDatabase = async (db) => {
     const phrases = await db.collection("phrases").find({}).toArray();
 
+
+
     return {
         statusCode: 200,
         headers: {
@@ -37,7 +39,19 @@ module.exports.handler = async (event, context) => {
     context.callbackWaitsForEmptyEventLoop = false;
 
     const db = await connectToDatabase(MONGODB_URI);
-    return queryDatabase(db);
+
+    if (context.clientContext.user){
+
+        return queryDatabase(db);
+
+    }
+
+    return {
+        statusCode: 401,
+        body: JSON.stringify({ mssg: 'ah ah ah, you must be logged into see this' })
+    }
+
+
 };
 
 // exports.handler = async (event, context) => {
