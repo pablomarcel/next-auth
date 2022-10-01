@@ -1,6 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGO_URI;
 const DB_NAME = 'corporate';
 
 let cachedDb = null;
